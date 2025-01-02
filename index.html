@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+  * { overflow-x: hidden; }
+  body { margin: 0; padding: 0; font-family: "Poppins", serif; }
+  .header { display: flex; align-items: center; padding: 10px; font-family: "Henny Penny", serif; border-bottom: 1px solid #939393; }
+  .header h2 { margin: 0px 0px 0px 10px; }
+  .header img { width: 40px; height: 40px; border-radius: 125px; }
+  .form-group { background: #FFF; border-radius: 25px; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  input , button , textarea{ padding: 10px 8px 10px 15px; width: 90%; border-radius: 25px; border: 1px solid #939393; margin: 10px 0px 10px 0px; outline: none; font-weight: 400; font-family: "Poppins", serif; }
+  textarea { border-radius: 12px; height: 140px; resize: none; }
+  button { color: #fff; background: #000; border: none; }
+  .preview { max-width: 200px; margin-top: 10px; }
+  a{ text-decoration: none; color: #000; font-weight: 600; }
+</style>
+<div class="header">
+  <img src="https://i.ibb.co/2SftyNH/icon.jpg">
+  <h2>Mighty Seller</h2>
+</div>
+<form id="contentForm">
+    <div class="form-group">
+      <h2>Add Account</h2>
+        <input type="text" id="title" name="title" required placeholder="Title">
+        <textarea id="description" name="description" rows="4" required placeholder="Description"></textarea>
+        <input type="text" id="youtubeId" name="youtubeId" placeholder="YouTube Video ID:" required>
+        <div id="youtubePreview" ></div>
+        <label>Thumbnail Image</label>
+        <input type="file" id="thumbnail" name="thumbnail" accept="image/*" required>
+        <img id="thumbnailPreview" class="preview" src="" alt="">
+        <div id="thumbnailUrl" style="display: none;"></div>
+        <label>Additional Image</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        <img id="imagePreview" class="preview" src="" alt="">
+        <div id="imageUrl" style="display: none;"></div>
+        <input type="number" id="number" name="number" required placeholder="Price ">
+        <button type="submit">Submit</button>
+        <p>Want To Remove Id <a href="remove.html">Click Here</a></p>
+</form>
+
+<div id="message"></div>
+<script src="script.js"></script>

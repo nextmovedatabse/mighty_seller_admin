@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+    * { overflow-x: hidden; }
+    body { margin: 0; padding: 0; font-family: "Poppins", serif; }
+    .header { display: flex; align-items: center; padding: 10px; font-family: "Henny Penny", serif; border-bottom: 1px solid #939393; }
+    .header h2 { margin: 0px 0px 0px 10px; }
+    .header img { width: 40px; height: 40px; border-radius: 125px; }
+    .remove-section { background: #FFF; border-radius: 25px; padding: 20px; margin: -70px 0px 0px 0px; display: flex; flex-direction: column; align-items: center; }
+    .remove-section > input , .remove-section > button { padding: 10px 8px 10px 15px; width: 90%; border-radius: 25px; border: 1px solid #939393; margin: 10px 0px 10px 0px; outline: none; font-weight: 400; font-family: "Poppins", serif; }
+    .remove-section button { color: #fff; background: #000; border: none; }
+    .modal-content { padding: 20px; background: #eee; margin: 10px; border-radius: 8px; }
+    .modal-buttons button { background: #ff0000; padding: 8px; color: #fff; border: none; font-family: "Poppins", serif; }
+    #confirmModal { display: none; }
+    a{ text-decoration: none; color: #000; font-weight: 600; }
+</style>
+<div class="header">
+    <img src="https://i.ibb.co/2SftyNH/icon.jpg">
+    <h2>Mighty Seller</h2>
+</div>
+<div class="container">
+    <div class="remove-section">
+        <h2>Remove Data</h2>
+        <input type="text" id="titleToRemove" placeholder="Enter title to remove">
+        <button onclick="confirmRemove()">Remove Data</button>
+        <div id="removeMessage"></div>
+        <p>Want To Add Id <a href="index.html">Click Here</a></p>
+    </div>
+
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <h3>Confirm Removal</h3>
+            <p>Are you sure you want to remove the data with title: <strong><span id="confirmTitle"></span></strong>?</p>
+            <div class="modal-buttons">
+                <button onclick="removeData()" class="confirm-btn">Yes, Remove</button>
+                <button onclick="closeModal()" class="cancel-btn" style="background: #008000;">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="remove.js"></script>
